@@ -134,77 +134,77 @@ function ProductCard({ product, onAddToCart }: { product: Product; onAddToCart?:
   }
 
   return (
-    <Card
-      bg="white"
-      borderRadius="lg"
-      overflow="hidden"
-      boxShadow="md"
-      _hover={{
-        transform: 'translateY(-4px)',
-        boxShadow: 'xl',
-      }}
-      transition="all 0.3s"
-    >
-      {/* Product Image */}
-      <Box
-        position="relative"
-        h="200px"
-        bg="coffee.100"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Text color="coffee.400" fontSize="4xl">
-          ☕
-        </Text>
-      </Box>
+            <Card
+              bg="white"
+              borderRadius="lg"
+              overflow="hidden"
+              boxShadow="md"
+              _hover={{
+                transform: 'translateY(-4px)',
+                boxShadow: 'xl',
+              }}
+              transition="all 0.3s"
+            >
+              {/* Product Image */}
+              <Box
+                position="relative"
+                h="200px"
+                bg="coffee.100"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Text color="coffee.400" fontSize="4xl">
+                  ☕
+                </Text>
+              </Box>
 
-      <CardBody>
-        <VStack align="stretch" spacing={2}>
-          <Heading size="md" color="coffee.700">
-            {product.name}
-          </Heading>
+              <CardBody>
+                <VStack align="stretch" spacing={2}>
+                  <Heading size="md" color="coffee.700">
+                    {product.name}
+                  </Heading>
           <Text fontSize="sm" color="coffee.600" noOfLines={2}>
-            {product.description}
-          </Text>
+                    {product.description}
+                  </Text>
 
-          {/* Ingredients */}
-          {product.ingredients && product.ingredients.length > 0 && (
-            <HStack spacing={1} flexWrap="wrap">
-              {product.ingredients.map((ingredient) => (
-                <Badge
-                  key={ingredient.id}
-                  colorScheme="coffee"
-                  variant="subtle"
-                  fontSize="xs"
-                >
-                  {ingredient.name}
-                </Badge>
-              ))}
-            </HStack>
-          )}
-        </VStack>
-      </CardBody>
+                  {/* Ingredients */}
+                  {product.ingredients && product.ingredients.length > 0 && (
+                    <HStack spacing={1} flexWrap="wrap">
+                      {product.ingredients.map((ingredient) => (
+                        <Badge
+                          key={ingredient.id}
+                          colorScheme="coffee"
+                          variant="subtle"
+                          fontSize="xs"
+                        >
+                          {ingredient.name}
+                        </Badge>
+                      ))}
+                    </HStack>
+                  )}
+                </VStack>
+              </CardBody>
 
-      <CardFooter
-        pt={0}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-      >
+              <CardFooter
+                pt={0}
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+              >
         <Text fontSize="xl" fontWeight="bold" color="brand.600">
-          ${product.price.toFixed(2)}
-        </Text>
-        <Button
-          leftIcon={<ShoppingCart size={18} />}
-          colorScheme="brand"
-          size="sm"
+                  ${product.price.toFixed(2)}
+                </Text>
+                <Button
+                  leftIcon={<ShoppingCart size={18} />}
+                  colorScheme="brand"
+                  size="sm"
           onClick={handleAddToCart}
-        >
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
+                >
+                  Add to Cart
+                </Button>
+              </CardFooter>
+            </Card>
   )
 }
 
@@ -240,8 +240,8 @@ function CategorySection({
       <SimpleGrid columns={{ base: 1, sm: 2, md: 2, lg: 3 }} spacing={6}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} onAddToCart={onAddToCart} />
-        ))}
-      </SimpleGrid>
+          ))}
+        </SimpleGrid>
     </Box>
   )
 }

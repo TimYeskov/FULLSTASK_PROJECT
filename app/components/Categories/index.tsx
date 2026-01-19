@@ -79,7 +79,7 @@ export default function Categories() {
               }}
               transition="all 0.2s"
             >
-              {category.name}
+                  {category.name}
             </Button>
           ))}
         </HStack>

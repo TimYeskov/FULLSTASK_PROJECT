@@ -103,84 +103,84 @@ export default function Filters({
       borderColor="coffee.200"
       minH="calc(100vh - 200px)"
     >
-      <VStack spacing={6} align="stretch">
+        <VStack spacing={6} align="stretch">
         <Heading size="md" color="coffee.700" mb={2}>
           Filters
-        </Heading>
+          </Heading>
 
         {/* Search */}
-        <Box>
+          <Box>
           <Text mb={2} fontWeight="semibold" color="coffee.700" fontSize="sm">
             Search
-          </Text>
-          <Input
+            </Text>
+            <Input
             placeholder="Find coffee..."
-            value={search}
-            onChange={(e) => handleSearchChange(e.target.value)}
+              value={search}
+              onChange={(e) => handleSearchChange(e.target.value)}
             bg="coffee.50"
-            borderColor="coffee.300"
+              borderColor="coffee.300"
             size="sm"
-            _focus={{
-              borderColor: 'coffee.500',
-              boxShadow: '0 0 0 1px var(--chakra-colors-coffee-500)',
-            }}
-          />
-        </Box>
+              _focus={{
+                borderColor: 'coffee.500',
+                boxShadow: '0 0 0 1px var(--chakra-colors-coffee-500)',
+              }}
+            />
+          </Box>
 
         {/* Price */}
-        <Box>
+          <Box>
           <Text mb={2} fontWeight="semibold" color="coffee.700" fontSize="sm">
             Price: ${priceRange[0]} - ${priceRange[1]}
-          </Text>
-          <RangeSlider
-            value={priceRange}
-            onChange={handlePriceChange}
-            min={0}
-            max={1000}
-            step={50}
-            colorScheme="brand"
-          >
-            <RangeSliderTrack>
-              <RangeSliderFilledTrack />
-            </RangeSliderTrack>
-            <RangeSliderThumb index={0} />
-            <RangeSliderThumb index={1} />
-          </RangeSlider>
-        </Box>
+            </Text>
+            <RangeSlider
+              value={priceRange}
+              onChange={handlePriceChange}
+              min={0}
+              max={1000}
+              step={50}
+              colorScheme="brand"
+            >
+              <RangeSliderTrack>
+                <RangeSliderFilledTrack />
+              </RangeSliderTrack>
+              <RangeSliderThumb index={0} />
+              <RangeSliderThumb index={1} />
+            </RangeSlider>
+          </Box>
 
         {/* Ingredients */}
-        <Box>
+          <Box>
           <Text mb={3} fontWeight="semibold" color="coffee.700" fontSize="sm">
             Ingredients
-          </Text>
-          <CheckboxGroup colorScheme="brand">
+            </Text>
+            <CheckboxGroup colorScheme="brand">
             <VStack align="stretch" spacing={2}>
-              {mockIngredients.map((ingredient) => (
-                <Checkbox
-                  key={ingredient.id}
-                  isChecked={selectedIngredients.includes(ingredient.id)}
-                  onChange={() => handleIngredientToggle(ingredient.id)}
-                  colorScheme="brand"
+                {mockIngredients.map((ingredient) => (
+                  <Checkbox
+                    key={ingredient.id}
+                    isChecked={selectedIngredients.includes(ingredient.id)}
+                    onChange={() => handleIngredientToggle(ingredient.id)}
+                    colorScheme="brand"
                   size="sm"
-                >
-                  {ingredient.name}
-                </Checkbox>
-              ))}
+                  >
+                    {ingredient.name}
+                  </Checkbox>
+                ))}
             </VStack>
-          </CheckboxGroup>
-        </Box>
+            </CheckboxGroup>
+          </Box>
 
         {/* Reset button */}
-        <Button
-          onClick={handleReset}
-          colorScheme="coffee"
-          variant="outline"
-          size="sm"
+          <Button
+            onClick={handleReset}
+            colorScheme="coffee"
+            variant="outline"
+            size="sm"
           mt={2}
-        >
+          >
           Reset Filters
-        </Button>
-      </VStack>
+          </Button>
+        </VStack>
     </Box>
   )
 }
